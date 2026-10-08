@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tunescape
 
-## Getting Started
+**Live demo: [tunescape.vercel.app](https://tunescape.vercel.app)**
 
-First, run the development server:
+An interactive atlas for exploring how different recommender algorithms see the same music taste.
+Individual project for the Recommender Systems course at ESADE.
+
+## What it does
+
+- Plots **15,350 Last.fm artists** on a 2D map, grouped into **10 genre clusters**.
+- Two map views: **behaviour** (artists placed by who listens to them) and **content** (artists placed by their tags).
+- Pick one of **200 users** to see what they listened to and where it sits on the map.
+- Compare the recommendations of **8 algorithms** for that user, side by side on the map:
+
+| Family | Algorithms |
+|---|---|
+| Baselines | Most Popular, Highest Average |
+| Collaborative filtering | User-User CF, Item-Item CF |
+| Latent factors | Matrix Factorization, Biased MF |
+| Content | Content-Based (tags) |
+| Ensemble | Hybrid |
+
+- Hover an artist to play a 30-second audio preview from the Deezer API.
+
+## How it is built
+
+- **Modelling (Python, offline):** algorithms trained on Last.fm listening data; the 2D layouts, clusters and per-user recommendations are exported to a single JSON file (`public/lastfm_data.json`).
+- **Front end:** Next.js 15, React 19, TypeScript, deck.gl for the scatter map, Zustand for state, Tailwind CSS, Framer Motion.
+- **Hosting:** Vercel.
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Then open http://localhost:3000.
