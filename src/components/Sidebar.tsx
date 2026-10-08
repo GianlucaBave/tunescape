@@ -56,7 +56,7 @@ export function Sidebar() {
       <header>
         <h1 className="text-xl font-semibold tracking-tight">Tunescape</h1>
         <p className="text-xs text-neutral-400">
-          Music recommender atlas · ESADE Recommender Systems
+          Music recommender atlas · Recommender Systems
         </p>
       </header>
 

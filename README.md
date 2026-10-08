@@ -3,7 +3,7 @@
 **Live demo: [tunescape.vercel.app](https://tunescape.vercel.app)**
 
 An interactive atlas for exploring how different recommender algorithms see the same music taste.
-Individual project for the Recommender Systems course at ESADE.
+Individual project on recommender systems.
 
 ## What it does
 

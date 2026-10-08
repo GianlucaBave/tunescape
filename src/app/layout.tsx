@@ -8,7 +8,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   title: "Tunescape — Music Recommender Atlas",
   description:
-    "Interactive scatter map of 15k artists with personalised recommendations from 8 algorithms. ESADE Recommender Systems individual project.",
+    "Interactive scatter map of 15k artists with personalised recommendations from 8 algorithms. Recommender Systems individual project.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
